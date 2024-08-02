@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+import "ma_pad_config.proto";
+
+message SessionConfigData {
+  repeated PadConfig pad_configs = 1;
+  optional float duration = 2;
+  optional int32 interval = 3;
+}

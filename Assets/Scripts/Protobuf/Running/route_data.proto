@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+message RouteData {
+  optional int32 route_id = 1;
+  optional bytes route_map_image = 2;
+  optional string dest_dist = 3 [default = ""];
+  optional string dest_duration = 4 [default = ""];
+  // running
+  optional string difficulty = 5 [default = ""];
+  optional string level = 6 [default = ""];
+  optional int32 toilets = 7 [default = -1];
+  optional int32 water_points = 8 [default = -1];
+}

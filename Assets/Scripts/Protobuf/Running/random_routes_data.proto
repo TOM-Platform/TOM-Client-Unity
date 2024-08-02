@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+import "route_data.proto";
+
+message RandomRoutesData {
+  repeated RouteData routes = 1;
+}

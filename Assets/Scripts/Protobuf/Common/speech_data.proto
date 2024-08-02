@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message SpeechData {
+//  optional int64 time = 1 [default = -1];
+  optional string voice = 2 [default = ""];
+}

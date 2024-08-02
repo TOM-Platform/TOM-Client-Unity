@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+message DirectionData {
+  optional string dest_dist = 1 [default = ""];
+  optional string dest_duration = 2 [default = ""];
+  optional string curr_dist = 3 [default = ""];
+  optional string curr_duration = 4 [default = ""];
+  optional string curr_instr = 5 [default = ""];
+  optional string curr_direction = 6 [default = ""];
+  optional bool audio_instr = 7 [default = false];
+}

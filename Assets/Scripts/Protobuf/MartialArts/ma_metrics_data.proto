@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+import "ma_collision_data.proto";
+import "ma_punch_data.proto";
+import "ma_sequence_data.proto";
+
+message MetricsData {
+    optional float reaction_time = 1;
+    optional PunchData punch_data = 2;
+    optional SequenceData sequence_data = 3;
+    optional MaCollisionData collision_data = 4;
+}

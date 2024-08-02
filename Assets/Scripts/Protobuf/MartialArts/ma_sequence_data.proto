@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+import "ma_punch_data.proto";
+
+message SequenceData {
+  repeated PunchData punches = 1;
+}

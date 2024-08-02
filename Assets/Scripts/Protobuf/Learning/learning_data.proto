@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message LearningData {
+  optional string instruction = 1 [default = ""];
+  optional string detail = 2 [default = ""];
+  optional string speech = 3 [default = ""];
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+enum PunchType {
+  LEFT_JAB = 0;
+  RIGHT_JAB = 1;
+  LEFT_CROSS = 2;
+  RIGHT_CROSS = 3;
+}

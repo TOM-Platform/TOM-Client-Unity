@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+message RunningCameraData {
+  optional int64 timestamp = 1 [default = -1];
+  optional double position_x = 2 [default = -1];
+  optional double position_y = 3 [default = -1];
+  optional double position_z = 4 [default = -1];
+  optional double rotation_x = 5 [default = -1];
+  optional double rotation_y = 6 [default = -1];
+  optional double rotation_z = 7 [default = -1];
+}

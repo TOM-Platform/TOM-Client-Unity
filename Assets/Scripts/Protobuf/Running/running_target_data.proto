@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message RunningTargetData {
+  optional string speed = 1 [default = "-1"];
+  optional string distance = 2 [default = "-1"];
+  optional string training_mode = 3;
+}

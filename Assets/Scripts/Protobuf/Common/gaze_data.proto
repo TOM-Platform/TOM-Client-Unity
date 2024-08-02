@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+message GazeData {
+//  optional int64 time = 1 [default = -1];
+  optional string details = 2 [default = ""];
+  optional double head_origin_x = 3 [default = 0]; // origin
+  optional double head_origin_y = 4 [default = 0];
+  optional double head_origin_z = 5 [default = 0];
+  optional double head_dir_x = 6 [default = 0]; // direction
+  optional double head_dir_y = 7 [default = 0];
+  optional double head_dir_z = 8 [default = 0];
+  optional double eye_origin_x = 9 [default = 0]; // origin
+  optional double eye_origin_y = 10 [default = 0];
+  optional double eye_origin_z = 11 [default = 0];
+  optional double eye_dir_x = 12 [default = 0]; // direction
+  optional double eye_dir_y = 13 [default = 0];
+  optional double eye_dir_z = 14 [default = 0];
+}

@@ -1,0 +1,9 @@
+- [ ] SPEC/DESIGN compliant: All acceptance criteria implemented as per spec and design document
+- [ ] ERRORS fully handled: All possible error conditions / validations checked and handled gracefully
+- [ ] TEST Unit 100%: 100% unit test coverage for all significant logic functions, with 100% pass rate
+- [ ] TEST All high cases: All HIGH test cases executed and passing
+- [ ] TEST All API cases: All API test scenarios automated
+- [ ] TEST on actual hardware: Code tested on actual hardware (e.g., HL2)
+- [ ] CODE Static analysis passed: No ESLint/Sonar errors
+- [ ] LEAD reviewed: Design, code, test run and runtime reviewed by a lead, in-person
+- [ ] MERGED to main: Code merged to main branch

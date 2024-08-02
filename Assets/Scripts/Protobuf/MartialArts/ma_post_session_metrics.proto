@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+message MaPostSessionMetrics {
+  required int32 total_punches = 1;
+  required int32 correct_punches = 2;
+  required int32 off_target_punches = 3;
+  required int32 bad_angle_punches = 4;
+
+  required float avg_reaction_time = 6;
+
+  required string session_duration = 7;
+}

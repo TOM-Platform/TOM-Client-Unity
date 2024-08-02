@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+message RunningSummaryData {
+  optional string detail = 1 [default = ""];
+  optional string distance = 2 [default = ""];
+  optional string speed = 3 [default = ""];
+  optional string duration = 4 [default = ""];
+  optional bytes image = 5;
+  optional string time = 6 [default = ""];
+}

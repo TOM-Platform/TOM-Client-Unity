@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message MaEndSessionData {
+  required string session_duration = 1;
+  required float interval_duration = 2;
+  required int64 datetime = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+message RunningPlaceData {
+  optional int32 place_id = 1 [default = -1];
+  optional string facility = 2 [default = ""];
+  optional string location = 3 [default = ""];
+  optional string level = 4 [default = ""];
+  optional string distance = 5 [default = ""];
+  optional string position = 6 [default = ""];
+}

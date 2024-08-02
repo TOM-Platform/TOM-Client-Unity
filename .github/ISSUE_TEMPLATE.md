@@ -1,0 +1,9 @@
+- [ ] LOGS available: correct logs along with necessary IDs/details were collected (either from original occurrence, or through recreation)
+- [ ] RCA complete: comment in non-technical terms
+- [ ] RCA origin found: (link to the pull request / design document / spec point that introduced the problem)
+- [ ] FIX explained: comment with explanation of the proposed or completed fix
+- [ ] LEAD reviewed: RCA, RCA-ORIGIN, FIX, IMPACT, code - all reviewed by a lead
+- [ ] TEST case available :(if not already there) to prevent recurrence of issue
+- [ ] TESTS 100% coverage: All unit tests, API tests and ESLint/Sonar passing
+- [ ] TEST on actual hardware: Code tested on actual hardware (e.g., HL2)
+- [ ] ERRORS fully handled: All possible error conditions / validations related to the fix have been checked and handled gracefully

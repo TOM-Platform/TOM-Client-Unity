@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+import "ma_vector.proto";
+
+message PadConfig {
+  optional MaVector position = 1;
+  optional MaVector rotation = 2;
+  optional int32 handedness = 3;
+  optional int32 punch_type = 4;
+}

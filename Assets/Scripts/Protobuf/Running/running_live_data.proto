@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+message RunningLiveData {
+  optional string distance = 1 [default = ""];
+  optional string heart_rate = 2 [default = ""];
+  optional string speed = 3 [default = ""];
+  optional string calories = 4 [default = ""];
+  optional string duration = 5 [default = ""];
+  optional string time = 6 [default = ""];
+  optional string instruction = 7 [default = ""];
+  optional bool audio_instr = 8 [default = false];
+}

@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+message RunningTypePositionMappingData {
+  optional int32 running_distance_position = 1 [default = 4];
+  optional int32 running_speed_position = 2 [default = 1];
+  optional int32 running_calories_position = 3 [default = 2];
+  optional int32 running_heart_rate_position = 4 [default = 3];
+  optional int32 running_duration_position = 5 [default = 7];
+  optional int32 running_time_position = 6 [default = 5];
+  optional int32 summary_detail_position = 7 [default = 0];
+  optional int32 summary_distance_position = 8 [default = 1];
+  optional int32 summary_speed_position = 9 [default = 2];
+  optional int32 summary_duration_position = 10 [default = 3];  
+  optional int32 summary_time_position = 11 [default = 5];
+  optional int32 selection_speed_position = 12 [default = 7];
+  optional int32 selection_distance_position = 13 [default = 8];
+}

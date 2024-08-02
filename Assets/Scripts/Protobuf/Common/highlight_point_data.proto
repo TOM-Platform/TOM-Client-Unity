@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+message HighlightPointData {
+  //  optional int64 time = 1 [default = -1];
+  optional double world_x = 2 [default = 0];
+  optional double world_y = 3 [default = 0];
+  optional double world_z = 4 [default = 0];
+  optional string details = 5 [default = ""];
+}

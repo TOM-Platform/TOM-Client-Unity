@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message SocketData {
+  optional int32 data_type = 1;
+  optional bytes data = 2;
+}

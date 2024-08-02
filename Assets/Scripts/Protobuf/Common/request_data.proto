@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message RequestData {
+  optional string detail = 1 [default = ""];
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+import "ma_punch_type.proto";
+
+message PunchData {
+  optional int32 hand = 1 [default = -1];
+  optional PunchType punch_type = 2 [default = LEFT_JAB];
+  optional string name = 3 [default = ""];
+}

@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message MaVector {
+  optional float x = 1;
+  optional float y = 2;
+  optional float z = 3;
+}

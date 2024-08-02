@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+import "ma_vector.proto";
+
+message MaCollisionData {
+    optional MaVector velocity = 1;
+    optional MaVector collision_point = 2;
+    optional MaVector pad_position = 3;
+    optional float distance_to_target = 4 [default = 0];
+    optional float angle = 5 [default = 0];
+    optional int32 hand = 6 [default = -1];
+}
