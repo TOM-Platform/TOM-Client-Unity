@@ -1,8 +1,13 @@
-﻿public interface IProgressIndicatorObject
+﻿namespace TOM.Common.UI
 {
-    void StartProgressIndicator(string message);
 
-    void UpdateProgressIndicator(string message);
+    public interface IProgressIndicatorObject
+    {
+        void StartProgressIndicator(string message);
 
-    void StopProgressIndicator(string message);
+        void UpdateProgressIndicator(string message);
+
+        void StopProgressIndicator(string message);
+    }
+
 }

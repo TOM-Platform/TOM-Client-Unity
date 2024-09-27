@@ -1,0 +1,19 @@
+{
+    "name": "Communication",
+    "rootNamespace": "",
+    "references": [
+        "GUID:04376767bc1f3b428aefa3d20743e819",
+        "GUID:8b7cc3e86d77403b8b984c08cbaeaf8f",
+        "GUID:7404ed9ad29ad3844ac3a261c8d45b60",
+        "GUID:59720873347cd004393d9e06f841a150"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

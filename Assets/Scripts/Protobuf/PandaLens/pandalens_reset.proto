@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message PandaLensReset {
+  optional string message = 1 [default = ""];
+}

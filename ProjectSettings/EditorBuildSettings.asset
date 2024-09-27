@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MartialArts.unity
     guid: 3ed77b8e06e2b1b4ea225fab081b7790
+  - enabled: 1
+    path: Assets/Scenes/PANDALens.unity
+    guid: f35e07d7233959e478949f8aaec0700a
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: be715c15c05f85840918290de66788a6, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4796b563ba6c78046a5da858c360c895, type: 2}

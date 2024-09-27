@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message PandaLensInput {
+  optional string key_input = 1 [default = ""];
+}

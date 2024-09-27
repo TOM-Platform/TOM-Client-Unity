@@ -8,6 +8,7 @@ A Unity implementation of the client to support smart glasses and phones that re
 
 ## Requirements
 - For HoloLens2 development, you need to use a Windows 10+ PC. Add the required [prerequisites for HoloLens development](https://learn.microsoft.com/en-us/training/modules/learn-mrtk-tutorials/1-1-introduction#prerequisites)
+  - Install the [development tools](https://learn.microsoft.com/en-us/windows/mixed-reality/develop/install-the-tools) (e.g., Unity3D, Visual Studio)
 - For voice dictation in HoloLens, make sure there is an active internet connection and online speech recognition service ( "Setting - > Privacy -> Speech "-> Turn on "Online speech recognition" and "Speech recognition").
 
 
@@ -39,6 +40,13 @@ A Unity implementation of the client to support smart glasses and phones that re
         }
     }
     ```
+- [For testing the app on real device] Build the project and deploy it to the HoloLens2 device
+- [For simulating the app on real device] Instead of building the project, you can also use the Unity Editor with [Holographic Remoting Player](https://learn.microsoft.com/en-us/windows/mixed-reality/develop/native/holographic-remoting-player) to simulate the application on the HoloLens2 device.
+  - Install the [Holographic Remoting Player](https://www.microsoft.com/p/holographic-remoting-player/9nblggh4sv40) on the HoloLens2 device and start the app.
+  - Enable remoting on Unity Editor by going to `Mixed Reality -> Remoting -> Holographic Remoting for Play Mode`, add the IP address of the HoloLens2 device, and `Enable Holographic Remoting for Play Mode`.
+  - `Play` the Unity application on Unity Editor, which will show the holographic view on the HoloLens2 device.
+  - Simulation enable to use certain real sensor data from HoloLens2 (e.g., gaze, hand tracking, eye tracking, etc.). For voice input it may use the Windows computer's microphone. 
+- [For voice dictation in simulator] In the Windows PC, make sure there is an active internet connection and online speech recognition service ( "Setting - > Privacy & Security -> Speech"-> Turn on "Online speech recognition").
 
 ### Nreal
 - TODO
@@ -57,43 +65,8 @@ A Unity implementation of the client to support smart glasses and phones that re
 - Run the (Unity) client application in the respective platform (HoloLens2, Nreal, or Simulator)
 
 
-## Testing
-
-### Setup Unity TestRunner and Code Coverage
-1. Activate Test Runner by going to (`Window -> General -> Testrunner`) [Ref](https://docs.unity3d.com/Packages/com.unity.test-framework@1.4/manual/getting-started.html)
-2. Ensure these panels are open in your Unity Editor
-3. Under the Code Coverage panel, check `Enable Code Coverage` under the **Settings** header
-
-### Creating Test Scripts
-- Unity has 2 kinds of test scripts.
-    - **Play Mode Tests:** Run inside the editor's play mode, ideal for testing game logic and functionality that relies on running the game. Use the (`UnityTest`) attribute.
-    - **Edit Mode Tests:** Run directly in the Unity Editor and not in play mode, useful for testing logic independent of the game running, like validation, data structures and editor extensions. Use the (`Test`) attribute.
-- To create an Edit Mode test script, go to (`Assets/Scripts/Tests`), click on the EditMode folder, click the (`EditMode`) tab in the test runner and click (`Create Test Script in Current folder`)
-- To create an Play Mode test script, go to (`Assets/Scripts/Tests`), click on the PlayMode folder, click the (`PlayMode`) tab in the test runner and click (`Create Test Script in Current folder`)
-
-### Running Test Script & Obtaining Code Coverage
-- Under Test Runner, click on either the EditMode or PlayMode tab, click run all or run selected
-- When prompted to enter Debug Mode, click yes
-- Code coverage report should be automatically generated after running tests. If not, go to the code coverage panel and click (`Generate from Last`) at the bottom right of the panel.
-- Open the report in the form of an (`index.html`) file in the (`CodeCoverage`) folder in the project root folder.
-
-
-## Linting (code formatting)
-**Visual Studio / (Code)**
-1. Open the Command Palette (`Ctrl-Shift-P`) for Visual Studio Code, or Quick Launcher (`Ctrl-q`) for Visual Studio
-2. Search for and select 'Format Document' to automatically format the `.cs` file
-
-
 ## Development
-
-### Guides
-- Please read the [repository guide](https://docs.google.com/document/d/13nuP668jawXzb_bnPgzxtRhcEUJzmzB0YHYm-yMr15I/edit#heading=h.d636ak5kflwe) to understand how the server works
-- Follow development guidelines in creating new service and components.
-
-### Protobuf
-- Ensure you have `protoc` installed by typing `protoc --version` in your terminal. If it is not installed, you may follow the instructions [here](https://github.com/protocolbuffers/protobuf#protocol-compiler-installation).
-- Create your proto file in `Assets/Scripts/Protobuf`. For more information on how to structure proto data, please refer [here](https://protobuf.dev/getting-started/csharptutorial/).
-- `cd` to `Assets/Scripts` and run this command in your terminal `protoc -I=Protobuf --csharp_out=Protobuf Protobuf/proto_name.proto` to generate the builder class. Note that you have to run the command again if you edit the proto file.
+- See [DeveloperGuide.md](DeveloperGuide.md) for more details on development guidelines.
 
 
 ## References

@@ -1,22 +1,26 @@
 ﻿using UnityEngine;
 
-public class ProgressIndicator : MonoBehaviour
+namespace TOM.Common.UI
 {
-    [SerializeField]
-    private GameObject progressIndicatorObject;
 
-    public void ShowProgressIndicator(string message)
+    public class ProgressIndicator : MonoBehaviour
     {
-        progressIndicatorObject.GetComponent<ProgressIndicatorObject>().StartProgressIndicator(message);
+        [SerializeField] private GameObject progressIndicatorObject;
+
+        public void ShowProgressIndicator(string message)
+        {
+            progressIndicatorObject.GetComponent<ProgressIndicatorObject>().StartProgressIndicator(message);
+        }
+
+        public void UpdateProgressIndicator(string message)
+        {
+            progressIndicatorObject.GetComponent<ProgressIndicatorObject>().UpdateProgressIndicator(message);
+        }
+
+        public void StopProgressIndicator(string message)
+        {
+            progressIndicatorObject.GetComponent<ProgressIndicatorObject>().StopProgressIndicator(message);
+        }
     }
 
-    public void UpdateProgressIndicator(string message)
-    {
-        progressIndicatorObject.GetComponent<ProgressIndicatorObject>().UpdateProgressIndicator(message);
-    }
-
-    public void StopProgressIndicator(string message)
-    {
-        progressIndicatorObject.GetComponent<ProgressIndicatorObject>().StopProgressIndicator(message);
-    }
 }

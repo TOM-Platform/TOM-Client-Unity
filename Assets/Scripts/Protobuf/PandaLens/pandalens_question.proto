@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message PandaLensQuestion {
+  optional string image = 1 [default = ""];
+  optional string content = 2 [default = ""];
+  optional string speech = 3 [default = ""];
+}

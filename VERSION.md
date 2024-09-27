@@ -1,8 +1,12 @@
-# Change log (version history)
-
+# Version History
 
 ### main
 - latest stable version
+
+### v0.2
+- Enable additional applications and templates
+- Uniform protobuf keys
+- Add `TOM.*` namespace
 
 ### v0.1
 - Initial version

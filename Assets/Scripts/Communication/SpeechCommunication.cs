@@ -1,76 +1,88 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 
 using Microsoft.MixedReality.Toolkit.Experimental.UI;
 using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.MixedReality.Toolkit.Input;
 
-public class SpeechCommunication : MonoBehaviour
+namespace TOM.Common.Communication
 {
-    public DictationHandler dictationHandler;
     
-    private bool dictationActive = false;
-
-    private bool isSpeechAvailable = false;
-
-    private string speechResult = "";
-    public string SpeechResult
+    public class SpeechCommunication : MonoBehaviour
     {
-        get
-        {
-            isSpeechAvailable = false;
-            string result = speechResult.Trim();
-            speechResult = "";
-            VisualLog.Log(speechResult);
-            return result;
-        }
-        set
-        {
-            speechResult = value;
-            VisualLog.Log(speechResult);
-        }
-    }
+        public DictationHandler dictationHandler;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        private bool dictationActive = false;
 
-    }
+        private bool isSpeechAvailable = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (IsListening() != dictationActive)
+        private string speechResult = "";
+
+        //FIXME: REMOVE THIS WHEN ALL TOM SERVICES UTILISE THE GET SET FUNCTION BELOW
+        public string SpeechResult
         {
-            dictationActive = IsListening();
-            if (!dictationActive)
+            get
             {
-                Debug.Log("Final Speech: " + speechResult);
-                isSpeechAvailable = (speechResult != null && speechResult != "");
+                Debug.Log(speechResult);
+                return this.speechResult;
+            }
+            set
+            {
+                this.speechResult = value;
+                Debug.Log(speechResult);
             }
         }
-    }
 
-    public bool IsListening()
-    {
-        return dictationHandler.IsListening;
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            if (dictationHandler == null)
+            {
+                Debug.LogError("DictationHandler not assigned!");
+            }
+        }
 
-    public void StartListening()
-    {
-        dictationHandler.StartRecording();
-    }
+        // Update is called once per frame
+        void Update()
+        {
+            if (IsListening() != dictationActive)
+            {
+                dictationActive = IsListening();
+                if (!dictationActive)
+                {
+                    Debug.Log("Final Speech: " + speechResult);
+                    isSpeechAvailable = (speechResult != null && speechResult != "");
+                }
+            }
+        }
 
-    public void StopListening()
-    {        
-        dictationHandler.StopRecording();
+        public bool IsListening()
+        {
+            return dictationHandler.IsListening;
+        }
+
+        public void StartListening()
+        {
+            dictationHandler.StartRecording();
+        }
+
+        public void StopListening()
+        {
+            dictationHandler.StopRecording();
+        }
+
+        public bool IsSpeechAvailable()
+        {
+            return isSpeechAvailable;
+        }
+
+        public void ResetSpeechResult()
+        {
+            this.speechResult = "";
+            this.isSpeechAvailable = false;
+        }
     }
     
-    public bool IsSpeechAvailable()
-    {
-        return isSpeechAvailable;
-    }
-
 }

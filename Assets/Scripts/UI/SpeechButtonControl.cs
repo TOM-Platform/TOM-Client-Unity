@@ -1,68 +1,73 @@
+using TOM.Common.Communication;
+
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 
 using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.MixedReality.Toolkit.Input;
 
-public class SpeechButtonControl : MonoBehaviour
+namespace TOM.Common.UI
 {
-    public SpeechCommunication speechCommunication;   
-    public AudioClip recording_start, recording_stop;
 
-    private bool listening = false;
-    private bool buttonClick = false;
-
-    private AudioSource audioSource; 
-
-    // Start is called before the first frame update
-    void Start()
+    public class SpeechButtonControl : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-    }
+        public SpeechCommunication speechCommunication;
+        public AudioClip recording_start, recording_stop;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private bool listening = false;
+        private bool buttonClick = false;
+        private AudioSource audioSource;
 
-        if (speechCommunication.IsListening() != listening)
+        // Start is called before the first frame update
+        void Start()
         {
-            listening = speechCommunication.IsListening();
-            audioSource.PlayOneShot(listening ? recording_start : recording_stop, 0.6f);
+            audioSource = GetComponent<AudioSource>();
         }
 
-        if (buttonClick)
+        // Update is called once per frame
+        void Update()
         {
-            buttonClick = false;
-            handleButtonClick();
-        }
-    }
 
-    public void ClickButton()
-    {
-        buttonClick = true;        
-    }
-
-    private void handleButtonClick()
-    { 
-        Debug.Log("handleButtonClick");
-        try
-        {
-            if (speechCommunication.IsListening())
+            if (speechCommunication.IsListening() != listening)
             {
-                speechCommunication.StopListening();
+                listening = speechCommunication.IsListening();
+                audioSource.PlayOneShot(listening ? recording_start : recording_stop, 0.6f);
             }
-            else
+
+            if (buttonClick)
             {
-                speechCommunication.StartListening();
+                buttonClick = false;
+                handleButtonClick();
             }
         }
-        catch (Exception e)
+
+        public void ClickButton()
         {
-            Debug.LogError("Dictation failed: " + e.Message);
+            buttonClick = true;
         }
+
+        private void handleButtonClick()
+        {
+            Debug.Log("handleButtonClick");
+            try
+            {
+                if (speechCommunication.IsListening())
+                {
+                    speechCommunication.StopListening();
+                }
+                else
+                {
+                    speechCommunication.StartListening();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Dictation failed: " + e.Message);
+            }
+        }
+        
     }
 
-  
 }

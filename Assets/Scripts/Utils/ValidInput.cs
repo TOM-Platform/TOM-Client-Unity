@@ -1,14 +1,17 @@
-internal class ValidInput
+namespace TOM.Common.Utils
 {
-    internal static bool isValidInt(string value)
+    public static class ValidInput
     {
-        int i;
-        return int.TryParse(value, out i);
-    }
+        public static bool isValidInt(string value)
+        {
+            int i;
+            return int.TryParse(value, out i);
+        }
 
-    internal static bool isValidBool(string boolean)
-    {
-        bool result;
-        return bool.TryParse(boolean, out result);
+        public static bool isValidBool(string boolean)
+        {
+            bool result;
+            return bool.TryParse(boolean, out result);
+        }
     }
 }

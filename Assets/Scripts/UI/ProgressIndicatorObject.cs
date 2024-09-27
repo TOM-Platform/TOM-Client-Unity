@@ -3,39 +3,45 @@ using Microsoft.MixedReality.Toolkit.UI;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class ProgressIndicatorObject : MonoBehaviour, IProgressIndicatorObject
+namespace TOM.Common.UI
 {
-    [SerializeField]
-    private GameObject progressIndicatorObject = null;
-    private IProgressIndicator progressIndicator;
 
-    private void Awake()
+    public class ProgressIndicatorObject : MonoBehaviour, IProgressIndicatorObject
     {
-        progressIndicator = progressIndicatorObject.GetComponent<IProgressIndicator>();
-    }
+        [SerializeField] private GameObject progressIndicatorObject = null;
+        private IProgressIndicator progressIndicator;
 
-    public async void StartProgressIndicator(string message)
-    {
-        while (progressIndicator.State != ProgressIndicatorState.Closed)
+        private void Awake()
         {
-            await Task.Delay(200);
+            progressIndicator = progressIndicatorObject.GetComponent<IProgressIndicator>();
         }
-        progressIndicator.Message = message;
-        await progressIndicator.OpenAsync();
-    }
 
-    public void UpdateProgressIndicator(string message)
-    {
-        progressIndicator.Message = message;
-    }
-
-    public async void StopProgressIndicator(string message)
-    {
-        while (progressIndicator.State != ProgressIndicatorState.Open)
+        public async void StartProgressIndicator(string message)
         {
-            await Task.Delay(200);
+            while (progressIndicator.State != ProgressIndicatorState.Closed)
+            {
+                await Task.Delay(200);
+            }
+
+            progressIndicator.Message = message;
+            await progressIndicator.OpenAsync();
         }
-        progressIndicator.Message = message;
-        await progressIndicator.CloseAsync();
+
+        public void UpdateProgressIndicator(string message)
+        {
+            progressIndicator.Message = message;
+        }
+
+        public async void StopProgressIndicator(string message)
+        {
+            while (progressIndicator.State != ProgressIndicatorState.Open)
+            {
+                await Task.Delay(200);
+            }
+
+            progressIndicator.Message = message;
+            await progressIndicator.CloseAsync();
+        }
     }
+
 }

@@ -1,9 +1,29 @@
 {
     "name": "EditMode",
-    "optionalUnityReferences": [
-        "TestAssemblies"
+    "rootNamespace": "",
+    "references": [
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:61b8a29ea3734214fa28fad8ad4d2a48",
+        "GUID:b56e2a9ad867ebc4084d22ef111c9290",
+        "GUID:18c4bf41f2dadf847bee46ad82b99289",
+        "GUID:c2cf234cf0b6fba4e9a8cdfede233d69",
+        "GUID:59720873347cd004393d9e06f841a150",
+        "GUID:e120c7cc1dfc1544c8bc598be517c248"
     ],
     "includePlatforms": [
         "Editor"
-    ]
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

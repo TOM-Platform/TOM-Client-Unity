@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace MartialArts
+namespace TOM.Common.Utils
 {
     public class Timer : MonoBehaviour
     {
