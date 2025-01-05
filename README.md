@@ -3,7 +3,7 @@
 A Unity implementation of the client to support smart glasses and phones that receive data from the server
 - This [Unity3D](https://unity.com/) client serves as the primary front-end interface for devices such as smart glasses and phones. 
 - Users directly interact with this interface. 
-- It's constructed using [MRTK 2.8](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/releases/2.8.3) and employs web socket communication to connect with the [TOM-Server-Python](../TOM-Server-Python).
+- It's constructed using [MRTK 2.8](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/releases/2.8.3) and employs web socket communication to connect with the [TOM-Server-Python](https://github.com/TOM-Platform/TOM-Server-Python).
 
 
 ## Requirements
@@ -28,7 +28,7 @@ A Unity implementation of the client to support smart glasses and phones that re
 	- ```javascript
 		{"host":"<IP_ADDRESS>","port":"8090"}
 	  ```
-	- NOTE: both the device (e.g., HoloLens2) and [server](https://github.com/NUS-SSI/TOM-Server-Python) computer should be connected via a PRIVATE network (e.g., phone hotspot)
+	- NOTE: both the device (e.g., HoloLens2) and [server](https://github.com/TOM-Platform/TOM-Server-Python) computer should be connected via a PRIVATE network (e.g., phone hotspot)
 - To auto stop the voice dictation after a timeout, modify the voice integration of MRTK for HL2 in `WindowsDictationInputProvider.cs`.
   - Search `WindowsDictationInputProvider` in the project using "All" (not "In Assets"), open the script, and modify the `DictationRecognizer_DictationComplete` method in *lines 392-408* as follows:
   - ```cs
@@ -71,7 +71,7 @@ A Unity implementation of the client to support smart glasses and phones that re
   - This setting is also auto-applied by XREAL project validator. (https://docs.xreal.com/Getting%20Started%20with%20NRSDK#3-configure-project-settings)
 
 ### Simulator (Unity Editor)
-- Make sure both the Unity Editor (Simulator) and [server](../TOM-Server-Python) are running on the same computer so that the server address is `127.0.0.1` (localhost)
+- Make sure both the Unity Editor (Simulator) and [server](https://github.com/TOM-Platform/TOM-Server-Python) are running on the same computer so that the server address is `127.0.0.1` (localhost)
 - Create a `tom_config.json` file inside `Videos/TOM` in the computer's home directory
 - Use the `127.0.0.1` as the server address in the `tom_config.json` as follows
     - ```javascript
@@ -80,7 +80,7 @@ A Unity implementation of the client to support smart glasses and phones that re
 
 
 ## Application execution
-- Start the [TOM-Server-Python](../TOM-Server-Python) to establish a socket connection
+- Start the [TOM-Server-Python](https://github.com/TOM-Platform/TOM-Server-Python) to establish a socket connection
 - Run the (Unity) client application in the respective platform (HoloLens2, Nreal, or Simulator)
 
 
