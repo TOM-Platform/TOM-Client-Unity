@@ -3,6 +3,9 @@
 ### main
 - latest stable version
 
+### v0.3
+- Enable support for XReal (Light)
+
 ### v0.2
 - Enable additional applications and templates
 - Uniform protobuf keys

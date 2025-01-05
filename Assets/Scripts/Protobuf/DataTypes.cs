@@ -62,6 +62,7 @@ public static class DataTypes
     // learning data
     public const int LEARNING_DATA = 301;
     public const int REQUEST_LEARNING_DATA = 302;
+    public const int REQUEST_RESET_LEARNING = 303;
 
 
     // martial arts data

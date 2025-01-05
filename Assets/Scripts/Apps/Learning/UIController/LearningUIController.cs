@@ -16,6 +16,7 @@ namespace TOM.Apps.Learning
         public ResizableTextContent panelDetail;
         public TextToSpeech textToSpeech;
         public GameObject selectionPoint;
+        public SpeechButtonControl speechButtonControl; 
 
 
         // Start is called before the first frame update
@@ -86,6 +87,14 @@ namespace TOM.Apps.Learning
         {
             yield return new WaitForSeconds(duration);
             HideSelectionPoint();
+        }
+
+        public void PressVoiceButton()
+        {
+            if (speechButtonControl != null)
+            {
+                speechButtonControl.ClickButton();
+            }
         }
     }
 

@@ -6,6 +6,7 @@ using UnityEngine;
 using Microsoft.MixedReality.Toolkit.Experimental.UI;
 using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.MixedReality.Toolkit.Input;
+using TOM.Common.Config;
 
 namespace TOM.Common.Communication
 {
@@ -26,11 +27,13 @@ namespace TOM.Common.Communication
             get
             {
                 Debug.Log(speechResult);
+                VisualLog.Log(speechResult);
                 return this.speechResult;
             }
             set
             {
                 this.speechResult = value;
+                VisualLog.Log(speechResult);
                 Debug.Log(speechResult);
             }
         }
@@ -81,6 +84,7 @@ namespace TOM.Common.Communication
         public void ResetSpeechResult()
         {
             this.speechResult = "";
+			VisualLog.Log(speechResult);
             this.isSpeechAvailable = false;
         }
     }

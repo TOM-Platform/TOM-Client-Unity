@@ -219,3 +219,6 @@ sysinfo.txt
 *.aab
 *.unitypackage
 
+# XREAL SDK 
+Assets/NRSDK.meta
+Assets/NRSDK/

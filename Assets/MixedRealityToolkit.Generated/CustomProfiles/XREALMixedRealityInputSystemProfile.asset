@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71cb900fa9dec5488df2deb180db58f, type: 3}
+  m_Name: XREALMixedRealityInputSystemProfile
+  m_EditorClassIdentifier: 
+  isCustomProfile: 1
+  dataProviderConfigurations:
+  - componentType:
+      reference: Microsoft.MixedReality.Toolkit.XRSDK.Input.XRSDKDeviceManager, Microsoft.MixedReality.Toolkit.Providers.XRSDK
+    componentName: XR SDK Device Manager
+    priority: 0
+    runtimePlatform: 15
+    deviceManagerProfile: {fileID: 0}
+  - componentType:
+      reference: MixedReality.Toolkit.XReal.Input.NrealDevkitCtrlDeviceManager, Assembly-CSharp
+    componentName: Nreal Devkit Ctrl Device Manager
+    priority: 0
+    runtimePlatform: 240
+    deviceManagerProfile: {fileID: 0}
+  - componentType:
+      reference: Microsoft.MixedReality.Toolkit.Input.HandJointService, Microsoft.MixedReality.Toolkit
+    componentName: Hand Joint Service
+    priority: 0
+    runtimePlatform: -1
+    deviceManagerProfile: {fileID: 0}
+  - componentType:
+      reference: MixedReality.Toolkit.XReal.Input.XRealControllerDeviceManager, Assembly-CSharp
+    componentName: Nreal Devkit Ctrl Device Manager
+    priority: 0
+    runtimePlatform: 240
+    deviceManagerProfile: {fileID: 0}
+  focusProviderType:
+    reference: Microsoft.MixedReality.Toolkit.Input.FocusProvider, Microsoft.MixedReality.Toolkit.Services.InputSystem
+  raycastProviderType:
+    reference: Microsoft.MixedReality.Toolkit.Input.DefaultRaycastProvider, Microsoft.MixedReality.Toolkit.Services.InputSystem
+  focusQueryBufferSize: 128
+  shouldUseGraphicsRaycast: 1
+  focusIndividualCompoundCollider: 0
+  inputActionsProfile: {fileID: 11400000, guid: 8ffa03c424aa71d41899d49d751798b2, type: 2}
+  inputActionRulesProfile: {fileID: 11400000, guid: 03945385d89102f41855bc8f5116b199, type: 2}
+  pointerProfile: {fileID: 11400000, guid: cfebd48d86d402640ab9b36b399584bd, type: 2}
+  gesturesProfile: {fileID: 0}
+  speechCommandsProfile: {fileID: 0}
+  enableControllerMapping: 1
+  controllerMappingProfile: {fileID: 11400000, guid: dc493ecc76c944a1b9deaf2d5d15ffe0, type: 2}
+  controllerVisualizationProfile: {fileID: 11400000, guid: ac2477ca3c42e514f86bc810089ba605, type: 2}
+  handTrackingProfile: {fileID: 0}

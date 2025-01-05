@@ -51,7 +51,7 @@ namespace TOM.Apps.Learning
 
         private const float HIGHLIGHT_POINT_DISPLAY_DURATION = 5f;
 
-        private const float LEARN_REQUEST_GAP_SECONDS = 4f;
+        private const float LEARN_REQUEST_GAP_SECONDS = 2f;
 
 
         // Start is called before the first frame update
@@ -86,6 +86,7 @@ namespace TOM.Apps.Learning
 
             handleSpeech();
             handleCommunication();
+            handleKeyInputs();
         }
 
         public void OnGazeSelect()
@@ -142,6 +143,29 @@ namespace TOM.Apps.Learning
                 speechCommunication.ResetSpeechResult();
             }
         }
+        
+        private void handleKeyInputs()
+        {
+            // check keys codes
+            // foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode)))
+            // {
+            //     Debug.Log("KeyCode down");
+            //     if (Input.GetKey(kcode))
+            //        Debug.Log("KeyCode down: " + kcode);
+            // }
+
+            if (Input.GetKeyDown(RingMouseKey.DOWN_ACTION_KEYCODE))
+            {
+                learningUIController.PressVoiceButton();
+            }
+            
+            if (Input.GetKeyDown(RingMouseKey.UP_ACTION_KEYCODE))
+            {
+                sendResetRequestToServer();
+            }
+        }
+        
+        
 
         private void handleCommunication()
         {
@@ -363,6 +387,16 @@ namespace TOM.Apps.Learning
         private void sendLearningRequestToServer()
         {
             sendRequestToServer(DataTypes.REQUEST_LEARNING_DATA);
+        }
+
+        private void sendResetRequestToServer()
+        {
+            sendRequestToServer(DataTypes.REQUEST_RESET_LEARNING);
+        }
+
+        public void ResetLearning()
+        {
+            Invoke("sendResetRequestToServer", 0.01f);
         }
 
     }

@@ -18,9 +18,12 @@ namespace TOM.Common.Communication
 
         public bool AutoConnect = true;
 
+        [Range(1f, 10f)]
+        public float ReconnectionInterval = 5f;
+
+
         private string accessToken = "";
         private WebSocket websocket = null;
-
         private bool connectionAttempted = false;
         private string errorStatus = null;
 
@@ -91,12 +94,13 @@ namespace TOM.Common.Communication
             VisualLog.DismissLog();
         }
 
-        private IEnumerator LoginUser()
+        private IEnumerator AttemptConnection()
         {
             // accessToken = reply.data.access_token;
             if (AutoConnect)
             {
                 VisualLog.Log("LoginUser");
+                yield return new WaitForSecondsRealtime(ReconnectionInterval);
                 yield return ConnectWSAsync();
             }
         }
@@ -129,13 +133,12 @@ namespace TOM.Common.Communication
             if (AutoConnect && !connectionAttempted && configLoader != null)
             {
                 connectionAttempted = true;
-                StartCoroutine(LoginUser());
+                StartCoroutine(AttemptConnection());
             }
 
             if (errorStatus != null)
             {
-                ProcessErrorStatus(errorStatus);
-                errorStatus = null;
+                ProcessErrorStatus();
             }
 
             if (websocket != null && connectionAttempted)
@@ -172,16 +175,16 @@ namespace TOM.Common.Communication
             OnApplicationQuit();
         }
 
-        private void ProcessErrorStatus(string status)
+        private void ProcessErrorStatus()
         {
             Debug.Log("Error:" + errorStatus);
-
-            //// restart after disconnection?
-            //if (AutoConnect && connectionAttempted)
-            //{
-            //    StopExchange();
-            //    connectionAttempted = false;
-            //}
+            errorStatus = null;
+            
+            // restart after disconnection?
+            if (AutoConnect && connectionAttempted)
+            {
+               connectionAttempted = false;
+            }
         }
 
         private void ProcessMessage(byte[] bytes)

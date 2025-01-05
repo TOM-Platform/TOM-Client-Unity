@@ -1,5 +1,8 @@
 using UnityEngine;
+#if UNITY_ANDROID
+#else
 using UnityEngine.Windows.WebCam;
+#endif
 using System.Linq;
 using System;
 using System.Threading.Tasks;
@@ -8,6 +11,8 @@ namespace TOM.Common.Utils
 {
     public static class PhotoCamera
     {
+#if UNITY_ANDROID
+#else
         private static PhotoCapture photoCaptureObject = null;
         private static TaskCompletionSource<byte[]> photoDataCompletionSource;
         private static bool isCaptureDone = true;
@@ -88,5 +93,6 @@ namespace TOM.Common.Utils
             photoCaptureObject.Dispose();
             photoCaptureObject = null;
         }
+#endif
     }
 }

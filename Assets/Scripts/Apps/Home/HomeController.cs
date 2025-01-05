@@ -55,14 +55,15 @@ namespace TOM.Apps
 
             Debug.Log($"Last scene name: {lastSceneLoaded}");
 
-            // Unload the last loaded scene
-            SceneManager.UnloadSceneAsync(lastSceneLoaded);
+            // Load the new scene
+            SceneManager.LoadSceneAsync(sceneName, mode);
 
             // Wait in case we don't want to switch scenes too abruptly 
             yield return new WaitForSeconds(0.25f);
 
-            // Load the new scene
-            SceneManager.LoadSceneAsync(sceneName, mode);
+            // Unload the last loaded scene
+            SceneManager.UnloadSceneAsync(lastSceneLoaded);
+
         }
 
     }

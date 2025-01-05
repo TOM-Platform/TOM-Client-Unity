@@ -2085,6 +2085,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+  - keyword: Clear All
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1208946709}
+          m_TargetAssemblyTypeName: TOM.Apps.Learning.LearningController, Apps
+          m_MethodName: ResetLearning
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   persistentKeywords: 0
   speechConfirmationTooltipPrefab: {fileID: 0}
 --- !u!1 &1208946706
@@ -2156,6 +2172,7 @@ MonoBehaviour:
   panelDetail: {fileID: 685131469}
   textToSpeech: {fileID: 452629568}
   selectionPoint: {fileID: 355377596}
+  speechButtonControl: {fileID: 815788810}
 --- !u!1 &1263294654
 GameObject:
   m_ObjectHideFlags: 0

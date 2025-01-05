@@ -7,7 +7,6 @@ using System.Threading;
 using System.Linq;
 using System;
 using UnityEngine;
-using UnityEngine.Windows.WebCam;
 
 using Google.Protobuf;
 using Google.Protobuf.Collections;
